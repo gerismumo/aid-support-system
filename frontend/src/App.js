@@ -7,11 +7,13 @@ import Questions from './pages/Questions';
 import Receiver from './pages/Receiver';
 import ReceiverQuiz from './pages/ReceiverQuiz';
 import Register from './pages/Register';
+import FrontPage from './pages/FrontPage';
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<FrontPage />} />
+        <Route path='/bloodDonation' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/donorsPage' element={<Donor />} />

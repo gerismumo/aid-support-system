@@ -699,3 +699,101 @@ align-items: center;
 .admin-page table button:hover {
   background-color: #c0392b;
 }
+
+
+/* front end page */
+
+.front-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.front-page .header {
+  background-color: var(---blue);
+  box-shadow: 0px 2px 5px #ccc;
+  position: fixed;
+  width: 100%;
+}
+
+.front-page nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.front-page nav .links-account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.front-page nav .donate button {
+  background-color:var(---blue);
+  color: var(---white);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.front-page nav .logo{
+  margin-left: 20px;
+  color: var(---white);
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.front-page nav .links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: var(---white);
+  font-weight: 700;
+  font-size: 17px;
+  margin-right: 60px;
+}
+.front-page nav .donate {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.front-page nav .information-tab {
+  color: var(---white);
+}
+.front-page nav .resources-tab {
+  color: var(---white);
+}
+.front-page .accounts {
+  margin-top: 70px;
+  position: fixed;
+  right: 10px; 
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1; 
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 5px;
+}
+
+.front-page .accounts button {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(---white);
+  color: var(---black);
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.front-page .accounts button:hover {
+  background-color: var(---hoverBlue);
+  color: var(---black);
+}
