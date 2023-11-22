@@ -748,6 +748,15 @@ align-items: center;
   font-size: 17px;
   margin-right: 60px;
 }
+.navbar nav .links button {
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.navbar nav .links button:hover {
+  color: black;
+  background-color: rgb(161, 5, 5);
+}
 .navbar nav .donate {
   display: flex;
   justify-content: center;

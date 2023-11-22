@@ -22,6 +22,11 @@ const NavBar = () => {
     const handleOpenDonation = () => {
         navigate('/bloodDonation')
     }
+
+
+    const handleCrisisClick = () => {
+        navigate('/crisisResponse');
+    }
   return (
     <div className='navbar'>
         <div className="header ">
@@ -31,7 +36,7 @@ const NavBar = () => {
                     </div>
                     <div className="links-account">
                         <div className="links">
-                            <button>Crisis Response</button>
+                            <button onClick={handleCrisisClick}>Crisis Response</button>
                         </div>
                         <div className="donate">
                             <div className="information-tab" onClick={handleOpenInfo}>
@@ -51,7 +56,6 @@ const NavBar = () => {
                     <div className="accounts">
                         <button>Post Info</button>
                         <button>Read Info</button>
-                        <button>Crisis response</button>
                     </div>
                 </>
             )}

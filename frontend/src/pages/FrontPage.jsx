@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Footer from './Footer';
 import NavBar from './NavBar';
+import {useNavigate } from 'react-router-dom';
+
 function FrontPage() {
     
 
