@@ -703,46 +703,43 @@ align-items: center;
 
 /* front end page */
 
-.front-page {
-  display: flex;
-  flex-direction: column;
-}
 
-.front-page .header {
+
+.navbar .header {
   background-color: var(---blue);
   box-shadow: 0px 2px 5px #ccc;
   position: fixed;
   width: 100%;
 }
 
-.front-page nav {
+.navbar nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
 }
 
-.front-page nav .links-account {
+.navbar nav .links-account {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.front-page nav .donate button {
+.navbar nav .donate button {
   background-color:var(---blue);
   color: var(---white);
   font-size: 17px;
   font-weight: 700;
 }
 
-.front-page nav .logo{
+.navbar nav .logo{
   margin-left: 20px;
   color: var(---white);
   font-weight: 700;
   font-size: 23px;
 }
 
-.front-page nav .links {
+.navbar nav .links {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -751,19 +748,19 @@ align-items: center;
   font-size: 17px;
   margin-right: 60px;
 }
-.front-page nav .donate {
+.navbar nav .donate {
   display: flex;
   justify-content: center;
   gap: 20px;
   align-items: center;
 }
-.front-page nav .information-tab {
+.navbar nav .information-tab {
   color: var(---white);
 }
-.front-page nav .resources-tab {
+.navbar nav .resources-tab {
   color: var(---white);
 }
-.front-page .accounts {
+.navbar .accounts {
   margin-top: 70px;
   position: fixed;
   right: 10px; 
@@ -778,7 +775,7 @@ align-items: center;
   border-radius: 5px;
 }
 
-.front-page .accounts button {
+.navbar .accounts button {
   width: 100%;
   padding: 5px;
   margin: 0;
@@ -793,7 +790,180 @@ align-items: center;
   border-radius: 3px;
 }
 
-.front-page .accounts button:hover {
+.navbar .accounts button:hover {
   background-color: var(---hoverBlue);
   color: var(---black);
 }
+
+.front-page {
+  display: flex;
+  flex-direction: column;
+}
+.front-page-content {
+  margin-top: 70px;
+  padding: 20px 60px;
+}
+.front-page-content .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.front-page-content .about h1 {
+  color: var(---green);
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.front-page-content .about-content {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.front-page-content .mission-content-header h1 {
+  text-align: center;
+  font-size: 30px;
+  color: var(---blue);
+  margin-bottom: 20px;
+}
+
+.front-page-content .about-content .about-content-text {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.front-page-content .about-content .about-content-text .about-image img {
+  width: 950px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+ 
+.front-page-content .about-content .about-content-text p {
+  font-size: 22px;
+  text-align: center;
+  line-height: 6.2vh;
+
+}
+.front-page-content .vision-content{
+  display: flex;
+  flex-direction: column;
+}
+.front-page-content .vision-content .vision-content-header h1 {
+  text-align: left;
+  font-size: 30px;
+  color: var(---blue);
+  margin-top: 30px;
+}
+
+.front-page-content .vision-content .vision-content-text p {
+  font-size: 22px;
+  text-align: center;
+  line-height: 6.2vh;
+}
+
+.front-page-content .services {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.front-page-content .services h1 {
+  color: var(---green);
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.front-page-content .services .information-content {
+  display: flex;
+  flex-direction: column;
+}
+.front-page-content .services .info-content-header h1 {
+  text-align: left;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(---blue);
+}
+
+.front-page-content .services .info-content-text ul li {
+  height: 7.2vh;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.front-page-content .services .info-content-text ul li b {
+  margin-right: 10px;
+}
+
+.front-page .icon {
+  color: var(---green);
+  font-size: 30px;
+  font-weight: 900;
+  margin-right: 20px;
+}
+.front-page .resources {
+  display: flex;
+  flex-direction: column;
+}
+.front-page .resources .resources-header h1 {
+  text-align: left;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(---blue);
+}
+.front-page .resources .resources-text p {
+  font-size: 22px;
+  text-align: center;
+  line-height: 6.2vh;
+}
+
+.front-page .crisis .crisis-header h1 {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(---blue);
+}
+
+.front-page .crisis  .crisis-text p {
+  font-size: 22px;
+  text-align: center;
+  line-height: 6.2vh;
+}
+
+.front-page .how {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.front-page .how h1 {
+  margin-top: 30px;
+  color: var(---green);
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.front-page .how .how-content-header h1{
+  margin-top: 20px;
+  text-align: left;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(---blue);
+}
+.front-page .how .how-content-text p {
+  font-size: 22px;
+  text-align: center;
+  line-height: 6.2vh;
+}
+
+.front-page .final-text {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 800;
+  color: var(---blue);
+  text-align: center;
+}
+
