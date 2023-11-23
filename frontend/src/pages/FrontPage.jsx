@@ -1,4 +1,5 @@
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -51,7 +52,9 @@ function FrontPage() {
             {openInfo && (
                 <>
                     <div className="accounts">
-                        <button>Post Info</button>
+                        <Link to='/homeinfo'>
+                        <button >Post Info</button>
+                        </Link>
                         <button>Read Info</button>
                         <button>Crisis response</button>
                     </div>
