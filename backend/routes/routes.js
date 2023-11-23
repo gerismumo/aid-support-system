@@ -256,13 +256,23 @@ router.post('/reportInfo', upload.single('file'), async(req, res) => {
     try {
         const formDataToSend= req.body;
         const file = req.file;
-        const picture = file.buffer;
+        const picture = file;
         const reportName = formDataToSend.name;
         const reportText = formDataToSend.report;
 
         await controller.reportInfo(reportName, reportText, picture);
 
         res.json({success: true});
+    } catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+router.get('/reportData', async(req, res) => {
+    try {
+         const data = await controller.getReportInfo();
+
+         res.json({success: true, data: data})
     } catch (error) {
         res.json({success: false, message: error.message});
     }

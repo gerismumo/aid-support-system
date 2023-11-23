@@ -313,6 +313,26 @@ const controller = {
         } catch (error) {
             console.log(error);
         }
+    },
+    getReportInfo: async () => {
+        try {
+            const connection = await createConnection();
+
+            const query = 'SELECT * FROM reports_table';
+
+            const getReport = await new Promise((resolve, reject) => {
+                connection.query(query, (err, result) =>{
+                    if(err) {
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                });
+            });
+            return getReport;
+        } catch(error) {
+            console.log(error);
+        }
     }
 }
 

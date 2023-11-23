@@ -986,4 +986,59 @@ align-items: center;
 .response-content {
   margin-top: 80px;
 }
+.response-form {
+ 
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.response h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(---green);
+}
+
+.response p {
+  color: #555;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 6vh;
+  margin-bottom: 20px;
+}
+
+.response ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.response li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.response button {
+  padding: 8px 12px;
+  background-color: var(---skyBlue);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.response button:hover {
+  background-color: var(---blue);
+}
 

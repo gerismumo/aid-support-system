@@ -1,76 +1,90 @@
 import { faHome, faPaperPlane, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useCallback, useEffect, useState } from 'react';
 import NavBar from '../NavBar';
 import './Home.css';
 
 const actions = [
-  { icon: faHome, text: 'Home' },
-  { icon: faPaperPlane, text: 'Send Report' },
+  { icon: faHome, text: 'Home',link:'/' },
+  { icon: faPaperPlane, text: 'Send Report', link:'/forminfo' },
 ];
 
-const cardContent = [
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 2',
-    description: 'This is the content of card 2.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-  {
-    title: 'Card 1',
-    description: 'This is the content of card 1.',
-    imageUrl: './images/donatelove.jpg',
-  },
-];
+// const cardContent = [
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 2',
+//     description: 'This is the content of card 2.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+//   {
+//     title: 'Card 1',
+//     description: 'This is the content of card 1.',
+//     imageUrl: './images/donatelove.jpg',
+//   },
+// ];
+const getMimeType = (imageData) => {
+  const magicBytes = imageData.slice(0, 4);
+  switch (magicBytes.toString('hex')) {
+    case 'ffd8ffdb': // JPEG
+      return 'image/jpeg';
+    case '89504e47': // PNG
+      return 'image/png';
+    case '49444348': // GIF
+      return 'image/gif';
+    default:
+      return null; // Unknown image type
+  }
+};
 
 const HomeInfo = () => {
   const [starCounter, setStarCounter] = useState(0);
@@ -79,6 +93,24 @@ const HomeInfo = () => {
     setStarCounter(starCounter + 1);
   };
 
+  const[ reportList, setReportList] = useState([]);
+
+  const report_api = `${process.env.REACT_APP_DATABASE_API}/api/reportData`;
+
+  const reportData = useCallback(async() => {
+    try {
+      const response = await axios.get(report_api);
+      // console.log('response',response.data.data);
+      setReportList(response.data.data);
+    } catch(error) {
+      console.error(error);
+    }
+  }, [report_api]);
+
+  useEffect(() => {
+    reportData();
+  }, []);
+    console.log('reportList',reportList);
   return (
     <>
     <NavBar />
@@ -88,7 +120,7 @@ const HomeInfo = () => {
           <div className="action-section">
             {actions.map((action, index) => (
               <div key={index}>
-                <a href="/locla">
+                <a href={action.link}>
                   <FontAwesomeIcon icon={action.icon} />
                   <h2>{action.text}</h2>
                 </a>
@@ -96,14 +128,18 @@ const HomeInfo = () => {
             ))}
           </div>
           <div className="posts-section">
-            {cardContent.map((card, index) => (
-              <div key={index} className="post-card">
+            {reportList.map((report) => (
+              <div key={report.report_id} className="post-card">
                 <div className="img-section" style={{ width: '20%' }}>
-                  <img className="img" alt={card.title} src={card.imageUrl} />
+                    <img
+                      className="img"
+                      alt="Image"
+                      src={`data:${getMimeType(report.report_file.data)};base64,${report.report_file.data.toString('base64')}`}
+                    />
                 </div>
                 <div className="content-section">
-                  <h1 className="title">{card.title}</h1>
-                  <p>{card.description}</p>
+                  <h1 className="title">User: {report.report_name}</h1>
+                  <p>ReportInfo: {report.report_text}</p>
                   <FontAwesomeIcon
                     icon={faStar}
                     onClick={handleSetStar}
