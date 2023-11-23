@@ -1,7 +1,7 @@
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
     const navigate = useNavigate();
@@ -29,12 +29,13 @@ const NavBar = () => {
     }
 
     const handlePostInfo = () => {
-        navigate('/homeinfo');
+        navigate('/forminfo');
     }
 
     const handleReadInfo = () => {
-        navigate('/homeInfo');
+        navigate('/forminfo');
     }
+
   return (
     <div className='navbar'>
         <div className="header ">
@@ -63,7 +64,7 @@ const NavBar = () => {
                 <>
                     <div className="accounts">
                         <button onClick={handlePostInfo}>Post Info</button>
-                        <button onclick={handleReadInfo}>Read Info</button>
+                        <Link to="/homeInfo">Read Info</Link>
                     </div>
                 </>
             )}

@@ -3,14 +3,14 @@ import AdminPage from './pages/AdminPage';
 import Donor from './pages/Donor';
 import FrontPage from './pages/FrontPage';
 import Home from './pages/Home';
+import HomeInfo from './pages/Info/HomeInfo';
+import InfoForm from './pages/Info/InfoForm';
 import Login from './pages/Login';
 import Questions from './pages/Questions';
 import Receiver from './pages/Receiver';
 import ReceiverQuiz from './pages/ReceiverQuiz';
 import Register from './pages/Register';
 import Response from './pages/Response';
-import HomeInfo from './pages/Info/HomeInfo';
-
 function App() {
   return (
     <Router>
@@ -25,7 +25,8 @@ function App() {
         <Route path='/receiversPage' element={<Receiver />} />
         <Route path='/questionsPage' element={<Questions />} />
         <Route path='/receiverQuestions' element={<ReceiverQuiz />} />
-        <Route path='/homeinfo' element={<HomeInfo />} />
+        <Route path='/homeInfo' element={<HomeInfo />} />
+        <Route path='/forminfo' element={<InfoForm />} />
       </Routes>
     </Router>
   );

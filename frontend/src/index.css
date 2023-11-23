@@ -784,7 +784,8 @@ align-items: center;
   border-radius: 5px;
 }
 
-.navbar .accounts button {
+.navbar .accounts button,
+.navbar .accounts a {
   width: 100%;
   padding: 5px;
   margin: 0;
@@ -799,7 +800,8 @@ align-items: center;
   border-radius: 3px;
 }
 
-.navbar .accounts button:hover {
+.navbar .accounts button:hover, 
+.navbar .accounts a:hover {
   background-color: var(---hoverBlue);
   color: var(---black);
 }
