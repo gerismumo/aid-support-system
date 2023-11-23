@@ -72,19 +72,7 @@ const actions = [
 //     imageUrl: './images/donatelove.jpg',
 //   },
 // ];
-const getMimeType = (imageData) => {
-  const magicBytes = imageData.slice(0, 4);
-  switch (magicBytes.toString('hex')) {
-    case 'ffd8ffdb': // JPEG
-      return 'image/jpeg';
-    case '89504e47': // PNG
-      return 'image/png';
-    case '49444348': // GIF
-      return 'image/gif';
-    default:
-      return null; // Unknown image type
-  }
-};
+
 
 const HomeInfo = () => {
   const [starCounter, setStarCounter] = useState(0);
@@ -130,11 +118,11 @@ const HomeInfo = () => {
           <div className="posts-section">
             {reportList.map((report) => (
               <div key={report.report_id} className="post-card">
-                <div className="img-section" style={{ width: '20%' }}>
+                <div className="img-section" style={{ width: '100%', height:'auto' }}>
                     <img
                       className="img"
                       alt="Image"
-                      src={`data:${getMimeType(report.report_file.data)};base64,${report.report_file.data.toString('base64')}`}
+                      src={URL.createObjectURL(new Blob([new Uint8Array(report.report_file.data)],{type: 'image/jpeg', }))}
                     />
                 </div>
                 <div className="content-section">

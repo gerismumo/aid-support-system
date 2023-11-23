@@ -1,9 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavBar from '../NavBar';
 import './Post.css';
 
 const InfoForm = () => {
+
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     name: '',
     report: '',
@@ -35,7 +39,7 @@ const InfoForm = () => {
       const response = await axios.post(report_api, formDataToSend);
 
       console.log('Report submitted successfully:', response.data);
-
+      navigate('/');
     } catch (error) {
       console.error('Error submitting report:', error);
     }

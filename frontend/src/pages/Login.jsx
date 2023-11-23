@@ -59,7 +59,7 @@ function Login() {
           const userType = user[0].user_type;
 
           if(user[0].role === 'admin') {
-            navigate('/usersPage');
+            navigate('/reportsPage');
           }else {
             if(bloodType !== null &&  userType !== null && userType === 'BloodDonor') {
               navigate('/receiversPage');

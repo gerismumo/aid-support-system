@@ -255,7 +255,8 @@ router.delete('/deleteReceiverQuestion/:userId', async(req, res) => {
 router.post('/reportInfo', upload.single('file'), async(req, res) => {
     try {
         const formDataToSend= req.body;
-        const file = req.file;
+        const file = req.file.buffer;
+        console.log('file', file);
         const picture = file;
         const reportName = formDataToSend.name;
         const reportText = formDataToSend.report;

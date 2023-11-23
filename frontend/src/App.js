@@ -10,6 +10,7 @@ import Questions from './pages/Questions';
 import Receiver from './pages/Receiver';
 import ReceiverQuiz from './pages/ReceiverQuiz';
 import Register from './pages/Register';
+import Reports from './pages/Reports';
 import Response from './pages/Response';
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/receiverQuestions' element={<ReceiverQuiz />} />
         <Route path='/homeInfo' element={<HomeInfo />} />
         <Route path='/forminfo' element={<InfoForm />} />
+        <Route path='/reportsPage' element={<Reports />} />
       </Routes>
     </Router>
   );

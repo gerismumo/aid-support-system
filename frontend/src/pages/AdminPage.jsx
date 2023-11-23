@@ -108,6 +108,7 @@ function AdminPage(){
                         <div className="select-page">
                             <select name="page" id="page" value={selectedPage} onChange={handlePageChange}>
                                 <option value="">Select a Page</option>
+                                <option value='/reportsPage'>Reports</option>
                                 <option value='/usersPage'>Users Page</option>
                                 <option value="/questionsPage">Questions Page</option>
                             </select>
