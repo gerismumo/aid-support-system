@@ -976,3 +976,12 @@ align-items: center;
   text-align: center;
 }
 
+/* response css */
+.response {
+  display: flex;
+  flex-direction: column;
+}
+.response-content {
+  margin-top: 80px;
+}
+
