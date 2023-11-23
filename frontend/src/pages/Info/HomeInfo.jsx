@@ -114,7 +114,6 @@ const HomeInfo = () => {
         <div className="trends">
             <p className="trends-heading">Here is What is Happening?</p>
             <p className="trends-subheading">Top Trends</p>
-            {/* Add your specific trends content here */}
           </div>
         </div>
       </div>
