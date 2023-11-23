@@ -9,6 +9,8 @@ import Receiver from './pages/Receiver';
 import ReceiverQuiz from './pages/ReceiverQuiz';
 import Register from './pages/Register';
 import Response from './pages/Response';
+import HomeInfo from './pages/Info/HomeInfo';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
         <Route path='/receiversPage' element={<Receiver />} />
         <Route path='/questionsPage' element={<Questions />} />
         <Route path='/receiverQuestions' element={<ReceiverQuiz />} />
+        <Route path='/homeinfo' element={<HomeInfo />} />
       </Routes>
     </Router>
   );

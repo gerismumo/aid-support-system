@@ -27,6 +27,14 @@ const NavBar = () => {
     const handleCrisisClick = () => {
         navigate('/crisisResponse');
     }
+
+    const handlePostInfo = () => {
+        navigate('/homeinfo');
+    }
+
+    const handleReadInfo = () => {
+        navigate('/homeInfo');
+    }
   return (
     <div className='navbar'>
         <div className="header ">
@@ -54,8 +62,8 @@ const NavBar = () => {
             {openInfo && (
                 <>
                     <div className="accounts">
-                        <button>Post Info</button>
-                        <button>Read Info</button>
+                        <button onClick={handlePostInfo}>Post Info</button>
+                        <button onclick={handleReadInfo}>Read Info</button>
                     </div>
                 </>
             )}
