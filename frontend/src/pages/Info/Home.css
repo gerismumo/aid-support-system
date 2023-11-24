@@ -52,6 +52,19 @@
   width: 100%;
 }
 
+.title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.reportinfo {
+  font-style: oblique;
+  font-variant: small-caps;
+}
+.dateinfo {
+ font-style: italic;
+ font-weight: 300;
+}
+
 .img-section {
   width: 50%; 
   height: auto;
@@ -64,7 +77,7 @@
 
 .content-section {
   padding: 16px;
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
   width: 100%;
 }
 
@@ -85,13 +98,16 @@
 }
 .trends {
   background-color: #f2f2f2;
-  padding: 16px;
+  padding: 41px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  width: 106%;
+  height: 56%;
+  margin-top: 33%;
+  border-radius: 9%;
+  flex-wrap: wrap
 }
 
 .trends-heading {
@@ -104,4 +120,11 @@
   font-size: 16px;
   color: #555;
   margin-bottom: 8px;
+}
+
+.trend-keys {
+  list-style: circle;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
 }
