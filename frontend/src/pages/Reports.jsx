@@ -82,7 +82,7 @@ const Reports = () => {
                     </nav>
                 </div>
                 <div className="admin-page-content">
-                    <h1>Users List</h1>
+                    <h1>Reports</h1>
                     <div className="users-table">
                         <table>
                             <thead>

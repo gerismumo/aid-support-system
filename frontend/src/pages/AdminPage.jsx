@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
-function AdminPage(){
+function AdminPage() {
     const[usersList, setUsersList] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [isAuthenticated, setIsAuthenticated] = useState(false);

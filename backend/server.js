@@ -15,7 +15,7 @@ app.use('/api', routes);
 
 const MemoryStore = require('memorystore')(session);
 const store = new MemoryStore({
-  checkPeriod: 86400000, // prune expired entries every 24h (in ms)
+  checkPeriod: 86400000, 
 });
 
 app.use(
