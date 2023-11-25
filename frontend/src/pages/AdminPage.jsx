@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
-function AdminPage(){
+function AdminPage() {
     const[usersList, setUsersList] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -108,6 +108,7 @@ function AdminPage(){
                         <div className="select-page">
                             <select name="page" id="page" value={selectedPage} onChange={handlePageChange}>
                                 <option value="">Select a Page</option>
+                                <option value='/reportsPage'>Reports</option>
                                 <option value='/usersPage'>Users Page</option>
                                 <option value="/questionsPage">Questions Page</option>
                             </select>

@@ -2,12 +2,16 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controller/controller');
 const session = require('express-session');
+const multer = require('multer');
 
 
 const MemoryStore = require('memorystore')(session);
 const store = new MemoryStore({
-  checkPeriod: 86400000, // prune expired entries every 24h (in ms)
+  checkPeriod: 86400000, 
 });
+
+const storage = multer.memoryStorage(); 
+const upload = multer({ storage: storage });
 
 router.use(
     session({
@@ -245,6 +249,33 @@ router.delete('/deleteReceiverQuestion/:userId', async(req, res) => {
     } catch(error) {
         res.json({success: false});
         console.log(error);
+    }
+});
+
+router.post('/reportInfo', upload.single('file'), async(req, res) => {
+    try {
+        const formDataToSend= req.body;
+        const file = req.file.buffer;
+        console.log('file', file);
+        const picture = file;
+        const reportName = formDataToSend.name;
+        const reportText = formDataToSend.report;
+
+        await controller.reportInfo(reportName, reportText, picture);
+
+        res.json({success: true});
+    } catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+router.get('/reportData', async(req, res) => {
+    try {
+         const data = await controller.getReportInfo();
+
+         res.json({success: true, data: data})
+    } catch (error) {
+        res.json({success: false, message: error.message});
     }
 })
 

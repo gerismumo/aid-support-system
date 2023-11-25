@@ -7,7 +7,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser');
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({limit: '10000mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const routes = require('./routes/routes');
@@ -15,7 +15,7 @@ app.use('/api', routes);
 
 const MemoryStore = require('memorystore')(session);
 const store = new MemoryStore({
-  checkPeriod: 86400000, // prune expired entries every 24h (in ms)
+  checkPeriod: 86400000, 
 });
 
 app.use(

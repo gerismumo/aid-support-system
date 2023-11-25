@@ -1,0 +1,135 @@
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.home-Container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.homeSection {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+
+.action-section {
+  width: 20%; 
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.posts-section {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  width: 60%; 
+  overflow-y: auto;
+  padding: 10px 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.post-card {
+  flex: 0 0 48%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.reportinfo {
+  font-style: oblique;
+  font-variant: small-caps;
+}
+.dateinfo {
+ font-style: italic;
+ font-weight: 300;
+}
+
+.img-section {
+  width: 50%; 
+  height: auto;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.content-section {
+  padding: 16px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.starCounter {
+  margin-left: 8px;
+}
+.trendsSection {
+  width: 20%; 
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  /* left: 0; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 100%;
+  overflow: auto;
+}
+.trends {
+  background-color: #f2f2f2;
+  padding: 41px;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 106%;
+  height: 100%;
+  margin-top: 33%;
+  border-radius: 9%;
+  flex-wrap: wrap
+}
+
+.trends-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.trends-subheading {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.trend-keys {
+  list-style: circle;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
+  left: 0;
+  padding-right: 50px;
+}

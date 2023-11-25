@@ -293,6 +293,47 @@ const controller = {
             console.error(error);
         }
     },
+    reportInfo: async(reportName, reportText, picture) => {
+        try {
+            const connection = await createConnection();
+
+            const query = 'INSERT INTO reports_table (report_name, report_text, report_file)  VALUES(?,?,?)';
+
+            const insertReport = await new Promise((resolve, reject) => {
+                connection.query(query,[reportName, reportText, picture], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+            });
+            return insertReport;
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    getReportInfo: async () => {
+        try {
+            const connection = await createConnection();
+
+            const query = 'SELECT * FROM reports_table';
+
+            const getReport = await new Promise((resolve, reject) => {
+                connection.query(query, (err, result) =>{
+                    if(err) {
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                });
+            });
+            return getReport;
+        } catch(error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = controller;
